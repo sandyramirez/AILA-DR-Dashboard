@@ -55,14 +55,14 @@
   place-items: center;
   width: var(--motif-size);
   height: var(--motif-size);
-  border: 1px solid color-mix(in srgb, var(--motif-color) 48%, transparent);
+  border: 1px solid color-mix(in srgb, var(--motif-color) 68%, transparent);
   border-radius: 999px;
   color: var(--motif-color);
   opacity: var(--motif-opacity);
-  background: rgba(240, 248, 252, 0.02);
+  background: color-mix(in srgb, var(--motif-color) 8%, rgba(240, 248, 252, 0.04));
   box-shadow:
-    0 16px 38px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.018);
+    0 16px 38px color-mix(in srgb, var(--motif-color) 10%, rgba(0, 0, 0, 0.14)),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   animation: sdgFloat var(--motif-speed, 18s) ease-in-out infinite alternate;
 }
 
@@ -70,86 +70,24 @@
   content: "";
   position: absolute;
   inset: calc(var(--motif-size) * 0.18);
-  border: 1px solid color-mix(in srgb, var(--motif-color) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--motif-color) 32%, transparent);
   border-radius: inherit;
 }
 
 .bg-motif svg {
-  width: 37%;
-  height: 37%;
-  filter: drop-shadow(0 8px 18px color-mix(in srgb, var(--motif-color) 12%, transparent));
+  width: 42%;
+  height: 42%;
+  filter: drop-shadow(0 8px 18px color-mix(in srgb, var(--motif-color) 28%, transparent));
 }
 
-.bg-motif--poverty {
-  --motif-color: #e5243b;
-  --motif-opacity: 0.12;
-  --motif-size: clamp(58px, 5vw, 84px);
-  --motif-speed: 17s;
-  left: 3%;
-  top: 12%;
+.bg-motif--empty {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--motif-color) 42%, transparent);
 }
 
-.bg-motif--gender {
-  --motif-color: #ff3a21;
-  --motif-opacity: 0.13;
-  --motif-size: clamp(72px, 6vw, 104px);
-  --motif-speed: 22s;
-  left: 9%;
-  top: 18%;
-}
-
-.bg-motif--health {
-  --motif-color: #4c9f38;
-  --motif-opacity: 0.11;
-  --motif-size: clamp(88px, 7vw, 126px);
-  --motif-speed: 19s;
-  left: 20%;
-  top: 10%;
-}
-
-.bg-motif--food {
-  --motif-color: #dda63a;
-  --motif-opacity: 0.11;
-  --motif-size: clamp(78px, 6vw, 112px);
-  --motif-speed: 18s;
-  left: 36%;
-  top: 20%;
-}
-
-.bg-motif--industry {
-  --motif-color: #fd6925;
-  --motif-opacity: 0.12;
-  --motif-size: clamp(82px, 7vw, 118px);
-  --motif-speed: 20s;
-  right: 15%;
-  top: 10%;
-}
-
-.bg-motif--climate {
-  --motif-color: #3f7e44;
-  --motif-opacity: 0.1;
-  --motif-size: clamp(92px, 7vw, 132px);
-  --motif-speed: 23s;
-  right: 4%;
-  top: 28%;
-}
-
-.bg-motif--justice {
-  --motif-color: #00689d;
-  --motif-opacity: 0.1;
-  --motif-size: clamp(104px, 8vw, 148px);
-  --motif-speed: 21s;
-  left: 2%;
-  top: 58%;
-}
-
-.bg-motif--growth {
-  --motif-color: #26bde2;
-  --motif-opacity: 0.1;
-  --motif-size: clamp(84px, 7vw, 120px);
-  --motif-speed: 18s;
-  right: 30%;
-  bottom: 12%;
+.bg-motif--empty::after {
+  inset: calc(var(--motif-size) * 0.08);
+  border-color: color-mix(in srgb, var(--motif-color) 18%, transparent);
 }
 
 @keyframes sdgFloat {
@@ -1539,34 +1477,11 @@
   }
 
   .sdg-background {
-    opacity: 0.82;
+    opacity: 0.76;
   }
 
-  .bg-motif--food,
-  .bg-motif--industry,
-  .bg-motif--justice,
-  .bg-motif--growth {
-    display: none;
-  }
-
-  .bg-motif--poverty {
-    left: -20px;
-    top: 166px;
-  }
-
-  .bg-motif--gender {
-    left: 96px;
-    top: 128px;
-  }
-
-  .bg-motif--health {
-    left: 236px;
-    top: 312px;
-  }
-
-  .bg-motif--climate {
-    right: -28px;
-    top: 214px;
+  .bg-motif {
+    opacity: calc(var(--motif-opacity) * 0.72);
   }
 
   .app-header {
