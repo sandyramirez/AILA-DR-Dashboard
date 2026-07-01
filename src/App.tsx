@@ -43,7 +43,7 @@ function App() {
   const [language, setLanguage] = useState<Language>("es")
 
   const ui = appCopy[language]
-  const undpLogo = language === "es" ? "/pnud-logo-blue.svg" : "/undp-logo-blue.svg"
+  const undpLogo = `${import.meta.env.BASE_URL}${language === "es" ? "pnud-logo-blue.svg" : "undp-logo-blue.svg"}`
 
   const selectedPillar = useMemo(
     () => pillars.find((pillar) => pillar.id === selectedPillarId) ?? pillars[0],
