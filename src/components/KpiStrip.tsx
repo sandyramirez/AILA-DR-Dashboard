@@ -38,9 +38,10 @@ export function KpiStrip({ language, metrics }: KpiStripProps) {
       {metrics.map((metric, index) => {
         const MetricIcon = metricIcons[index] ?? Layers3
         const metricCopy = getMetricCopy(metric, language)
+        const isLongValue = !metricCopy.value.includes("/")
 
         return (
-          <article className="evidence-item" key={metric.label}>
+          <article className={`evidence-item${isLongValue ? " evidence-item--stacked" : ""}`} key={metric.label}>
             <span className="evidence-item__label">
               <MetricIcon size={17} strokeWidth={2} aria-hidden="true" />
               {metricCopy.label}

@@ -31,6 +31,7 @@ import {
 } from "./data/localizedContent"
 
 type ChangeNotice = "actions" | "model" | null
+type Theme = "dark" | "light"
 
 function App() {
   const [selectedPillarId, setSelectedPillarId] = useState(pillars[0].id)
@@ -40,7 +41,8 @@ function App() {
   const [changeNotice, setChangeNotice] = useState<ChangeNotice>(null)
   const [noticeVisible, setNoticeVisible] = useState(false)
   const [noticeKey, setNoticeKey] = useState(0)
-  const [language, setLanguage] = useState<Language>("es")
+  const [language, setLanguage] = useState<Language>("en")
+  const [theme, setTheme] = useState<Theme>("light")
 
   const ui = appCopy[language]
   const undpLogo = `${import.meta.env.BASE_URL}${language === "es" ? "pnud-logo-blue.svg" : "undp-logo-blue.svg"}`
@@ -179,7 +181,7 @@ function App() {
         }
 
   return (
-    <main className="dashboard-shell">
+    <main className="dashboard-shell" data-theme={theme}>
       <SdgBackground />
 
       <div className="overview-layout">
@@ -236,12 +238,22 @@ function App() {
                   {ui.english}
                 </button>
               </div>
-              <div className="segmented-control segmented-control--disabled" aria-label={ui.appearance}>
-                <button className="is-active" type="button" aria-pressed="true">
+              <div className="segmented-control" aria-label={ui.appearance}>
+                <button
+                  className={theme === "dark" ? "is-active" : ""}
+                  type="button"
+                  aria-pressed={theme === "dark"}
+                  onClick={() => setTheme("dark")}
+                >
                   <Moon size={13} aria-hidden="true" />
                   {ui.dark}
                 </button>
-                <button type="button" aria-pressed="false" disabled title="Modo claro pendiente">
+                <button
+                  className={theme === "light" ? "is-active" : ""}
+                  type="button"
+                  aria-pressed={theme === "light"}
+                  onClick={() => setTheme("light")}
+                >
                   <Sun size={13} aria-hidden="true" />
                   {ui.light}
                 </button>

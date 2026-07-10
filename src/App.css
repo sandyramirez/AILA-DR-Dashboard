@@ -100,6 +100,183 @@
   }
 }
 
+.dashboard-shell[data-theme="light"] {
+  --bg: #edf6fb;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --border: rgba(4, 104, 177, 0.18);
+  --text: #17344a;
+  --text-strong: #061b2d;
+  --text-soft: #31536a;
+  --text-faint: #607b8d;
+  --line: rgba(4, 104, 177, 0.18);
+  color: var(--text);
+  background:
+    linear-gradient(90deg, rgba(4, 104, 177, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 16% 10%, rgba(38, 189, 226, 0.2), transparent 34%),
+    linear-gradient(180deg, #f7fbfe 0%, #e9f4fb 54%, #e5eef9 100%);
+  background-size: 72px 100%, auto, auto;
+}
+
+.dashboard-shell[data-theme="light"] .sdg-background::before {
+  background:
+    linear-gradient(112deg, rgba(4, 104, 177, 0.08), transparent 32%),
+    linear-gradient(180deg, transparent 0 56%, rgba(4, 104, 177, 0.07));
+  opacity: 0.58;
+}
+
+.dashboard-shell[data-theme="light"] .bg-motif {
+  opacity: calc(var(--motif-opacity) * 1.08);
+  background: color-mix(in srgb, var(--motif-color) 7%, rgba(255, 255, 255, 0.68));
+  box-shadow:
+    0 18px 42px rgba(4, 32, 56, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.dashboard-shell[data-theme="light"] .overview-rail,
+.dashboard-shell[data-theme="light"] .action-flow__grid,
+.dashboard-shell[data-theme="light"] .next-steps-strip {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62)),
+    rgba(255, 255, 255, 0.72);
+  border-color: rgba(4, 104, 177, 0.18);
+  box-shadow: 0 18px 45px rgba(4, 32, 56, 0.08);
+}
+
+.dashboard-shell[data-theme="light"] .dashboard-title h1,
+.dashboard-shell[data-theme="light"] .selected-context strong,
+.dashboard-shell[data-theme="light"] .selection-update strong,
+.dashboard-shell[data-theme="light"] .insight-block h3,
+.dashboard-shell[data-theme="light"] .insight-panel h2,
+.dashboard-shell[data-theme="light"] .subpillar-detail__score strong,
+.dashboard-shell[data-theme="light"] .subpillar-detail__score span,
+.dashboard-shell[data-theme="light"] .connection-card strong,
+.dashboard-shell[data-theme="light"] .action-flow h2,
+.dashboard-shell[data-theme="light"] .action-flow__context strong,
+.dashboard-shell[data-theme="light"] .priority-column h3,
+.dashboard-shell[data-theme="light"] .pathway-column h3,
+.dashboard-shell[data-theme="light"] .next-steps-strip h3,
+.dashboard-shell[data-theme="light"] .active-detail__heading h3,
+.dashboard-shell[data-theme="light"] .priority-detail__connection strong,
+.dashboard-shell[data-theme="light"] .route-notice strong,
+.dashboard-shell[data-theme="light"] .evidence-item strong {
+  color: var(--text-strong);
+}
+
+.dashboard-shell[data-theme="light"] .evidence-item--stacked strong {
+  color: #0d2a3f;
+}
+
+.dashboard-shell[data-theme="light"] .evidence-item strong {
+  font-size: clamp(17px, 1.25vw, 22px);
+}
+
+.dashboard-shell[data-theme="light"] .insight-panel h2 {
+  font-size: clamp(20px, 1.6vw, 25px);
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-detail__score strong {
+  font-size: clamp(26px, 2vw, 32px);
+}
+
+.dashboard-shell[data-theme="light"] .dashboard-title p,
+.dashboard-shell[data-theme="light"] .selected-context p,
+.dashboard-shell[data-theme="light"] .selection-update p,
+.dashboard-shell[data-theme="light"] .insight-block li,
+.dashboard-shell[data-theme="light"] .insight-panel p,
+.dashboard-shell[data-theme="light"] .source-note p,
+.dashboard-shell[data-theme="light"] .connection-card p,
+.dashboard-shell[data-theme="light"] .subpillar-detail p,
+.dashboard-shell[data-theme="light"] .action-flow__context p,
+.dashboard-shell[data-theme="light"] .priority-detail p,
+.dashboard-shell[data-theme="light"] .pathway-detail dd,
+.dashboard-shell[data-theme="light"] .initiative-list li,
+.dashboard-shell[data-theme="light"] .next-steps-strip li,
+.dashboard-shell[data-theme="light"] .route-notice p,
+.dashboard-shell[data-theme="light"] .evidence-item p {
+  color: var(--text-soft);
+}
+
+.dashboard-shell[data-theme="light"] .evidence-item__label,
+.dashboard-shell[data-theme="light"] .subpillar-chooser__label,
+.dashboard-shell[data-theme="light"] .insight-panel__header > span,
+.dashboard-shell[data-theme="light"] .action-flow__context span,
+.dashboard-shell[data-theme="light"] .priority-group h4,
+.dashboard-shell[data-theme="light"] .pathway-group h4,
+.dashboard-shell[data-theme="light"] .priority-detail__connection span {
+  color: var(--text-faint);
+}
+
+.dashboard-shell[data-theme="light"] .evidence-strip,
+.dashboard-shell[data-theme="light"] .evidence-item,
+.dashboard-shell[data-theme="light"] .insight-band,
+.dashboard-shell[data-theme="light"] .insight-block + .insight-block,
+.dashboard-shell[data-theme="light"] .connection-card,
+.dashboard-shell[data-theme="light"] .source-note,
+.dashboard-shell[data-theme="light"] .priority-column,
+.dashboard-shell[data-theme="light"] .pathway-column,
+.dashboard-shell[data-theme="light"] .priority-detail {
+  border-color: var(--line);
+}
+
+.dashboard-shell[data-theme="light"] .selected-context,
+.dashboard-shell[data-theme="light"] .selection-update {
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.dashboard-shell[data-theme="light"] .selection-update button {
+  color: var(--text-strong);
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-choice,
+.dashboard-shell[data-theme="light"] .priority-row,
+.dashboard-shell[data-theme="light"] .pathway-row {
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--text-strong);
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-choice:hover,
+.dashboard-shell[data-theme="light"] .priority-row:hover,
+.dashboard-shell[data-theme="light"] .pathway-row:hover {
+  background: color-mix(in srgb, var(--pillar-color, var(--row-color)) 12%, rgba(255, 255, 255, 0.86));
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-choice.is-active,
+.dashboard-shell[data-theme="light"] .priority-row.is-active,
+.dashboard-shell[data-theme="light"] .pathway-row.is-active {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--pillar-color, var(--row-color)) 34%, #ffffff), color-mix(in srgb, var(--pillar-color, var(--row-color)) 13%, #ffffff));
+  box-shadow:
+    inset 5px 0 0 var(--pillar-color, var(--row-color)),
+    0 12px 34px rgba(4, 32, 56, 0.08);
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-choice span,
+.dashboard-shell[data-theme="light"] .priority-row span:not(.priority-row__icon),
+.dashboard-shell[data-theme="light"] .pathway-row strong {
+  color: var(--text-strong);
+}
+
+.dashboard-shell[data-theme="light"] .subpillar-choice.is-active .subpillar-choice__icon,
+.dashboard-shell[data-theme="light"] .subpillar-choice.is-active strong,
+.dashboard-shell[data-theme="light"] .subpillar-choice.is-active .subpillar-choice__state,
+.dashboard-shell[data-theme="light"] .priority-row.is-active .priority-row__icon,
+.dashboard-shell[data-theme="light"] .pathway-row.is-active .pathway-row__icon {
+  color: var(--pillar-color, var(--row-color));
+}
+
+.dashboard-shell[data-theme="light"] .priority-detail__connection,
+.dashboard-shell[data-theme="light"] .next-steps-strip li {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.dashboard-shell[data-theme="light"] .route-notice {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--notice-color) 10%, transparent), transparent 54%),
+    rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 44px rgba(4, 32, 56, 0.16);
+}
+
 .step-label,
 .section-label {
   display: block;
@@ -267,7 +444,7 @@
   min-height: 76px;
   align-content: center;
   gap: 3px 16px;
-  padding: 13px 0;
+  padding: 13px 10px 13px 0;
   border-bottom: 1px solid rgba(166, 198, 220, 0.18);
 }
 
@@ -293,9 +470,10 @@
   align-self: center;
   color: var(--text-strong);
   font-family: var(--mono);
-  font-size: clamp(21px, 2vw, 28px);
+  font-size: clamp(18px, 1.35vw, 23px);
   line-height: 1.05;
   text-align: right;
+  white-space: nowrap;
 }
 
 .evidence-item p {
@@ -304,6 +482,27 @@
   color: #c4d3de;
   font-size: 11.5px;
   line-height: 1.38;
+}
+
+.evidence-item--stacked {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+}
+
+.evidence-item--stacked strong {
+  grid-column: 1;
+  grid-row: auto;
+  justify-self: start;
+  max-width: 100%;
+  font-size: clamp(22px, 1.8vw, 27px);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  text-align: left;
+  white-space: normal;
+}
+
+.evidence-item--stacked p {
+  max-width: none;
 }
 
 .explorer-section,
@@ -720,17 +919,17 @@
 .insight-panel h2 {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   color: #ffffff;
   font-family: var(--display);
-  font-size: clamp(25px, 2.4vw, 33px);
+  font-size: clamp(21px, 1.75vw, 26px);
   font-weight: 800;
   line-height: 1.05;
 }
 
 .insight-panel h2 svg {
-  width: 31px;
-  height: 31px;
+  width: 25px;
+  height: 25px;
   flex: 0 0 auto;
   color: var(--pillar-color);
 }
@@ -752,20 +951,20 @@
 .subpillar-detail__score {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .subpillar-detail__score strong {
-  min-width: 74px;
+  min-width: 54px;
   color: #ffffff;
   font-family: var(--mono);
-  font-size: clamp(38px, 4vw, 50px);
+  font-size: clamp(27px, 2.2vw, 34px);
   line-height: 1;
 }
 
 .subpillar-detail__score span {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1.18;
 }
